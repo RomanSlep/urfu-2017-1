@@ -5,13 +5,12 @@ var arrArabian1 = ['N', 'X', 'XX', 'XXX', 'XXXX', 'L'];
 var arrArabian2 = ['N', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'];
 
 function romanTime(time) {
-    var full = time.replace(':', '');
-    if (full.length === 4 && time !== '24:00') {
-        var romanT = (arrArabian1[arrRoman.indexOf(full[0])] +
-            arrArabian2[arrRoman.indexOf(full[1])] +
+    if (time.length === 5 && time !== '24:00') {
+        var romanT = (arrArabian1[arrRoman.indexOf(time[0])] +
+            arrArabian2[arrRoman.indexOf(time[1])] +
             ':' +
-            arrArabian1[arrRoman.indexOf(full[2])] +
-            arrArabian2[arrRoman.indexOf(full[3])]).replace(/NN/g, 'N');
+            arrArabian1[arrRoman.indexOf(time[3])] +
+            arrArabian2[arrRoman.indexOf(time[4])]).replace(/NN/g, 'N');
 
         if (romanT !== 'N:N') {
             romanT = romanT.replace(/N/g, '');
